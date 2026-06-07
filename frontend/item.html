@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Карточка игры</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content container">
+            <div class="logo"> Game storage</div>
+            <nav>
+                 <button id="theme-toggle" class="btn-theme">🌙Темная тема</button>
+                <a href="index.html">Игры</a>
+            </nav>
+        </div>
+    </header>
+   <main class="container">
+        <div class="item-details-card" style="margin-top: 30px; display: flex; gap: 30px; background: white; padding: 25px; border-radius: 12px;">
+            <div class="image-wrapper" style="flex: 1; max-width: 400px;">
+                <img id="item-image" src="" alt="Фото товара" style="width: 100%; height: 300px; object-fit: cover; border-radius: 8px;">
+            </div>
+            
+            <div class="info-wrapper" style="flex: 2;">
+                <h1 id="item-name" style="color: #2c3e50; margin-bottom: 15px;">Загрузка...</h1>
+                <p><strong>Сектор:</strong> <span id="item-sector">...</span></p>
+                <p><strong>Количество:</strong> <span id="item-quantity">...</span></p>
+                <p><strong>Вес:</strong> <span id="item-weight">...</span> ггб</p>
+                
+               
+                <div style="margin-top: 30px;">
+                    <button id="delete-btn" style="background-color: hsl(251, 63%, 46%); color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-weight: bold;">
+                        Удалить с библеотеки
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="item-script1.js"></script>
+
+</body>
+</html>

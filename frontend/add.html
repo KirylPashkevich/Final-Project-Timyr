@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <header>
+        <div class="header-content container">
+            <div class="logo"> Add new</div>
+            <nav>
+                 <button id="theme-toggle" class="btn-theme">🌙Темная тема</button>
+                <a href="index.html">Игры</a>
+                <a href="add.html">Добавить игру</a>
+            </nav>
+        </div>
+    </header>
+    <main class="container">
+        <div class ="form-container">
+            <h2>Добавление новой игры</h2>
+            <form id="add-item-form">
+                <input type="text" id="name" placeholder="Название игры" required>
+                <input type="number" step="0.1" id="weight" placeholder="Вес (ггб)">
+                <div class = "input-group">
+                    <label> Аватарка игры: </label>
+                    <input type="file" id="image_file" accept="image/*" required>
+                </div>
+                <div class="form-row">
+                    <input type="number" id="sector" placeholder="Сектор" required>
+                </div>
+                <input type="number" id="quantity" placeholder="Количество" required>
+                
+                <label class="checkbox-labele">
+                    <input type="checkbox" id="is_dangerous"> Вы не робот?
+                </label>
+                <button type="submit" id="save-btn"> Добавить в библиотеку </button>
+            </form>
+            
+        </div>
+    </main>
+    <script src="add-script.js"></script>
+</body>
+</html>
