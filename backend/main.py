@@ -81,6 +81,8 @@ app.add_middleware(
 # Монтируем статические файлы
 IMG_DIR.mkdir(parents=True, exist_ok=True)
 app.mount("/static", StaticFiles(directory=str(STATIC_DIR)), name="static")
+# Монтируем фронтенд (CSS, JS) на /app
+app.mount("/app", StaticFiles(directory=str(FRONTEND_DIR)), name="frontend")
 
 class Item(BaseModel):
     name: str
@@ -318,18 +320,5 @@ def health():
 
 
 @app.get("/")
-def serve_frontend():
-    """Serve the main frontend page"""
-    index_path = FRONTEND_DIR / "index.html"
-    if index_path.exists():
-        return FileResponse(str(index_path))
-    return {"message": "Frontend not found. Use /docs for API."}
-
-
-@app.get("/{page_name}.html")
-def serve_page(page_name: str):
-    """Serve any HTML page from the frontend directory"""
-    page_path = FRONTEND_DIR / f"{page_name}.html"
-    if page_path.exists():
-        return FileResponse(str(page_path))
-    raise HTTPException(status_code=404, detail="Page not found")
+def root():
+    return FileResponse(str(FRONTEND_DIR / "index.html"))

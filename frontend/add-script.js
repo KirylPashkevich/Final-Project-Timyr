@@ -27,7 +27,7 @@ from.addEventListener('submit', async (event) =>{
     });
     if (responce.status ===201){
         alert("Все нормально")
-        window.location.href = "index.html"
+        window.location.href = "/app/index.html"
     }else{
         alert("Плохо")
         console.log(await responce.json)
